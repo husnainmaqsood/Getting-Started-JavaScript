@@ -1,0 +1,189 @@
+use mozila mdn documentation for reference or for detail of anything related to javascript
+Detecting errors:
+chrome
+inspect
+console will show errors
+anything red is an error
+show filename.js:line number
+
+
+sometimes we use console to show outputs
+console.log() this will show message in the console
+this is very useful in debugging
+
+
+case sensitivity is important in javascript...
+
+we mostly use camelCase in javascript
+
+// single line comment
+
+/* multiple
+line 
+comment
+*/
+
+we can't use variable name starting with number
+we can use _ and $ or any character whether lower case or upper case.
+underscore shows some variable is provite
+$ is used for automatically generated code
+use camelCase convention
+
+common errors:
+	variable names cannot have spaces, reserved keywords and numbers.
+
+constants don't change
+we cannot reassign values to the constants.
+ 
+//this will throw an error
+console.log(price)
+let price = 3;
+
+//this will neither throw an error nor the value of price will be 3
+console.log(price)
+var price = 3;
+
+
+// we can also declare the variables like this
+let name = 'Husnain',
+    age = 23,
+    city = 'Vehari';
+showMessage(city);
+
+
+operator precedence:
+ let price = 3 + 2 * 2 should be 10 but it is 7 due to operator precedence.
+ multiplication and division takes place first than the plus and minus
+ multiplication, division, remainder, addition, subtraction (this is precedence order from left to right).
+ paranthesis thing is done before anything else
+
+strings are made up of double quotes, when we print them or use them, then those double or single quotes are not shown to us
+but if we want double or single quotes we use back slash as following:
+let message = "Hello \"World\"";
+this will printn Hello "World"
+
+
+Template literals:
+backtick is used for template literals, 
+let name = 'Andrea';
+let messae = `Hello
+
+
+
+${name}`;
+in html this will be shown hello Andrea
+but in javascript these endlines will also be shown.
+
+we can make objects as a key value pair
+const obj = {
+
+name: "John",
+age: 23
+print: function(){
+	
+console.log(this.name, this.age);
+
+}
+
+};
+
+2 notations for accessing object properties
+obj.name
+obj['name']
+
+
++ opreator for the concatenation of strings.
+
+
+ while pasring a string to a number using Number.passeFloat() or Number.parseInt(), always take care that start of string is a number.
+if start is a character then it will result in NaN otherwise it will parse the string before that character only.
+
+null is assigned by a programmer while undefined is assigned by the javascript when we don't initialize a variable. always use null.
+
+in conditionals(like in if etc) try to use triple equal signs ===
+
+using properties of an object in a method within an object, we use this keyword.
+otherwise it will not get that object's property reference.
+
+In js functions built in types like strings and numbers are passed as value, but objects are passes as reference. we can change object's properties in the function and these changes will be reflected.
+but if a string is passed to a function and updated in the function then this is not updated.
+
+
+for learning DOM:
+document is our current webpage, it is an object
+it has different methods
+we used method getElementById
+then we passed an argument id
+then an object is returned and then we used property textContent and changed it to somthing else
+
+
+html tags are called elements, read from the documentation
+we can change style properties of the elements 
+like 
+const header = document.getElementById('message');
+header.style.color = 'blue';
+Note: some css properties have dash - in their name, but we can't ues them in javascript, instead we use camel case, like header.style.fontWeight instead of header.style.font-weight.
+
+
+we can set events on the anchor tags also because they are also like buttons.
+
+Imp:
+we can remove the classes of html elements
+like first we have to get that element then we will do this as follows
+this code will be places in the click event's function.
+const review = document.getElementById('review');
+
+review.classLise.remove('d-none');
+
+when we add js files to html and write things globally in one file, all those things are accessible in all the files.
+
+if we have a code like this
+func1(){
+let var = 345;
+
+func2(){
+ let var = 44;
+ console.log(var); 44
+}
+
+console.log(var); 345
+}
+
+hoisting:
+
+abc = 345;
+console.log(abc); // abc
+
+var abc;
+this will not throw an error
+
+
+console.log(var);
+var abc;
+in this case it will show undefined.
+
+
+abc = 345;
+console.log(abc);
+let abc; // this will throw an error.
+
+
+but this is not the case with the functions.
+we can use functions before their declarations.
+
+
+if we do, use variables without declaring a variable.
+abc = 334;
+console.log(abc);
+
+this will show 334
+this is created in the window object.
+this is the problem with the javascript
+to avoid this problem, we use strict mode
+we write at the top of the file
+'strict mode';
+and then write our code.
+
+
+functin scope:
+resolves names by looking at function, then surrounding functions, then global scope.
